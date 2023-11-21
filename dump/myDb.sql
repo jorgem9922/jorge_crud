@@ -8,14 +8,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `productos` (
-  `id_producto` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `descripcion` varchar (255),
-  `precio` int(11),
-  `fotografia` blob,
-  PRIMARY KEY (id_producto)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`) VALUES
