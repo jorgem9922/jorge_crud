@@ -27,4 +27,3 @@
   </script>
 </body>
 </html>
-apache_child_terminate
