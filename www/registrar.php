@@ -1,20 +1,21 @@
 <?php include "conexion.php";?>
 <?php
-    mysqli_select_db($conexion, "productosbd");
-    $identificador = $_POST["identificador"];
+    mysqli_select_db($conexion, "dreams3");
+    $id_fabricante=$_POST["id_fabricante"];
     $nombre = $_POST["nombre"];
-    $descripcion = $_POST["descripcion"];
-    $precio = $_POST["precio"];
+    $telefono = $_POST["telefono"];
+    $codigo_postal = $_POST["codigo_postal"];
+    $correo_electronico =$_POST ["correo_electronico"];
     //var_dump ($_FILES['imagen']);
     $directorioSubida = "imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
-    if(isset($_FILES['imagen'])){
+    if(isset($_FILES['fotografia'])){
         $errores=0;
-        $nombreArchivo = $_FILES['imagen']['name'];
-        $filesize = $_FILES['imagen']['size'];
-        $directorioTemp = $_FILES['imagen']['tmp_name'];
-        $tipoArchivo = $_FILES['imagen']['type'];
+        $nombreArchivo = $_FILES['fotografia']['name'];
+        $filesize = $_FILES['fotografia']['size'];
+        $directorioTemp = $_FILES['fotografia']['tmp_name'];
+        $tipoArchivo = $_FILES['fotografia']['type'];
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
 
@@ -35,6 +36,7 @@
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-    $insertar="INSERT productos (id_producto,nombre, descripcion,precio, fotografia) VALUES ($identificador, '$nombre', '$descripcion', '$precio', '$nombreArchivo')";
+    $insertar="INSERT INTO `fabricantes` (`id_fabricante`, `nombre`, `telefono`, `codigo_postal`, `correo_electronico`,`fotografia`) VALUES ('$id_fabricante','$nombre', '$telefono', '$codigo_postal', '$correo_electronico', '$nombreArchivo')";
     mysqli_query($conexion, $insertar);
-    header("Location:alta_ok.php");?>
+   
+     header("Location:alta_ok.php");?>

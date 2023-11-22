@@ -26,30 +26,32 @@ $registro = mysqli_fetch_row($registros);
                             Ingresar datos:
                         </div>
                         <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[4];?>" enctype="multipart/form-data">
-                        
+                        <!-- id -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Identificador</label>
+                          <label for="" class="form-label">Id_fabricante</label>
                           <input type="number"
-                            class="form-control" name="identificador" id="identificador" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
-                          <small id="helpId" class="form-text text-muted">Identificador</small>
+                            class="form-control" name="id_fabricante" id="id_fabricante" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                          <small id="helpId" class="form-text text-muted">Id</small>
                         </div>
-
+                        <!-- nombre -->
                         <div class="mb-3">
                           <label for="" class="form-label">Nombre</label>
                           <input type="text"
                             class="form-control" name="nombre" id="nombre"  required value="<?php echo $registro[1];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">Nombre</small>
                         </div>
-
+                        <!-- telefono -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Descripcion</label>
-                          <textarea class="form-control" name="descripcion" id="descripcion" rows="3"> <?php echo $registro[2];?> </textarea>
+                          <label for="" class="form-label">telefono</label>
+                          <input type="number"
+                            class="form-control" name="telefono" id="telefono" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el telefono">
+                          <small id="helpId" class="form-text text-muted">telefono</small>
                         </div>
-
+                        <!-- cp -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Precio</label>
-                          <input type="number" class="form-control" name="precio" id="precio" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el precio">
-                          <small id="helpId" class="form-text text-muted">Precio</small>
+                          <label for="" class="form-label">CP</label>
+                          <input type="number" class="form-control" name="codigo_postal" id="codgo_postal" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el codigo postal">
+                          <small id="helpId" class="form-text text-muted">CP</small>
                         </div>
 
                         <div class="mb-3">
@@ -63,13 +65,10 @@ $registro = mysqli_fetch_row($registros);
                             class="form-control" name="imagen" id="imagen" required accept="image/*">
                           <small id="helpId" class="form-text text-muted">Imagen</small>
                         </div>
-
                         <div class="d-grid">
                             <input type="submit" class="btn btn-primary" value="Actualizar">
                         </div>
-
                         
-
                         </form>
 
                     </div>

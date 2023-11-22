@@ -3,13 +3,13 @@
    
     <div class="row">
         <div class="py-3" >
-            Sitio Web diseñado por Miguel Ramos<br>
+            Sitio Web diseñado por jorge<br>
             
         </div>
     </div>
     <div class="row">
         <div class="py-3">
-            <i class="bi-envelope px-3"></i>github/mikirams
+            <i class="bi-envelope px-3"></i>github/jorgem9922
         </div>
         <div class="py-3">
           <small class="text-muted">Origen OpenWebinars - Luis Javier Marquina García</small>

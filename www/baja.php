@@ -22,8 +22,8 @@ include "header.php";
                             Productos:
                         </div>
                         <?php
-                          mysqli_select_db($conexion,"productosbd");
-                          $consultar= "SELECT * FROM productos";
+                          mysqli_select_db($conexion,"dreams3");
+                          $consultar= "SELECT * FROM fabricantes";
 
                           $registros= mysqli_query($conexion, $consultar);
 
@@ -32,11 +32,12 @@ include "header.php";
                           <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th scope="col">Identificador 1</th>
+                                <th scope="col">Identificador </th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Imagen</th>
+                                <th scope="col">telefono</th>
+                                <th scope="col">CP</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">imagen</th>
                                 <th scope="col">Borrar</th>
                               
                               </tr>
@@ -54,7 +55,9 @@ include "header.php";
                                 <td><?php echo $registro[1]; ?></td>
                                 <td><?php echo $registro[2]; ?></td>
                                 <td><?php echo $registro[3]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="imagenes/'. $registro[4]. '">'; ?>  </td>
+                                <td><?php echo $registro[4]; ?></td>
+                                
+                                <td><?php echo '<img width="100px" height="100px" src="imagenes/'. $registro[5]. '">'; ?>  </td>
                                 <td> <a href="baja2.php?id=<?php echo $registro[0]; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td>  
                               </tr>
                               

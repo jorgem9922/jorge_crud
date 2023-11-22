@@ -8,14 +8,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
+CREATE TABLE fabricantes ( 
+
+    id_fabricante INT PRIMARY KEY, 
+
+    nombre VARCHAR(100), 
+
+    telefono INT, 
+
+    codigo_postal INT,
+
+    correo_electronico VARCHAR(100),
+
+    fotografia BLOB
+
+	
+);
 
 
 
-INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`) VALUES
-(1, 'Prod1', 'producto 1', 100),
-(2, 'Prod2', 'producto 2', 200),
-(3, 'Prod3', 'producto 3', 300),
-(4, 'Prod4', 'producto 4', 400);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
