@@ -2,9 +2,9 @@
 include "header.php";
 include "conexion.php";
 
-mysqli_Select_db($conexion, "productosbd");
+mysqli_Select_db($conexion, "dreams3");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT * FROM productos WHERE id_producto='$productoactualizar'";
+$seleccionar = "SELECT * FROM fabricantes WHERE id_fabricante='$productoactualizar'";
 $registros = mysqli_Query($conexion, $seleccionar);
 $registro = mysqli_fetch_row($registros);
 ?>
@@ -25,7 +25,7 @@ $registro = mysqli_fetch_row($registros);
                         <div class="card-header"> 
                             Ingresar datos:
                         </div>
-                        <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[4];?>" enctype="multipart/form-data">
+                        <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[0];?>" enctype="multipart/form-data">
                         <!-- id -->
                         <div class="mb-3">
                           <label for="" class="form-label">Id_fabricante</label>
@@ -44,7 +44,7 @@ $registro = mysqli_fetch_row($registros);
                         <div class="mb-3">
                           <label for="" class="form-label">telefono</label>
                           <input type="number"
-                            class="form-control" name="telefono" id="telefono" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el telefono">
+                            class="form-control" name="telefono" id="telefono" autofocus required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el telefono">
                           <small id="helpId" class="form-text text-muted">telefono</small>
                         </div>
                         <!-- cp -->
@@ -53,16 +53,23 @@ $registro = mysqli_fetch_row($registros);
                           <input type="number" class="form-control" name="codigo_postal" id="codgo_postal" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el codigo postal">
                           <small id="helpId" class="form-text text-muted">CP</small>
                         </div>
+                        <!-- correo -->
+                        <div class="mb-3">
+                          <label for="" class="form-label">Correo electrónico</label>
+                          <input type="twxt" class="form-control" name="correo_electronico" id="correo_electronico" required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
+                          <small id="helpId" class="form-text text-muted">Correo</small>
+                        </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="imagenes/'.$registro[4].'">';?>
+                          <?php  echo '<img width="100px" height="100px" src="imagenes/'.$registro[5].'">';
+                          ?>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Nueva</label>
                           <input type="file"
-                            class="form-control" name="imagen" id="imagen" required accept="image/*">
+                            class="form-control" name="fotografia" id="fotografia" required accept="image/*">
                           <small id="helpId" class="form-text text-muted">Imagen</small>
                         </div>
                         <div class="d-grid">

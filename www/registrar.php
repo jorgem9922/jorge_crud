@@ -36,7 +36,7 @@
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-    $insertar="INSERT INTO `fabricantes` (`id_fabricante`, `nombre`, `telefono`, `codigo_postal`, `correo_electronico`,`fotografia`) VALUES ('$id_fabricante','$nombre', '$telefono', '$codigo_postal', '$correo_electronico', '$nombreArchivo')";
+    $insertar="INSERT INTO `fabricantes` (`id_fabricante`, `nombre`, `telefono`, `codigo_postal`, `correo_electronico`,`fotografia`) VALUES ($id_fabricante,'$nombre', $telefono, $codigo_postal, '$correo_electronico', '$nombreArchivo')";
     mysqli_query($conexion, $insertar);
    
      header("Location:alta_ok.php");?>
